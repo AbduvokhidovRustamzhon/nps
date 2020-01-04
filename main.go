@@ -9,8 +9,8 @@ func main() {
 	score3 :=10
 
 	//nps = 100
-	promoters:=0
-	detractorov:=0
+	promotersLowerBound :=0
+	defactorsUpperBound :=0
 	//neutrals?- practice vs theory
 	//if'i - usloviya
 	// boolean - tip dannih
@@ -18,18 +18,39 @@ func main() {
 	//problem2: dublirovanie koda
 	//problem 3: magic values(9,6) - durnoy ton
 	// 3 magic values
-
+// refactoring  ulichshenie strukturi koda bez modifikacii povedenya
+//ctrl +alt+ v s videleniem pozvolyaet sozdat lokalnuyu
+//shift + f6 - pereimenovanie vseh imyon
 
 	if score1>=9 {
-		promoters:=promoters+1
+		promotersLowerBound= promotersLowerBound +1
 	}
 
 	if score1<=6 {
-		detractorov= detractorov+1
+		defactorsUpperBound = defactorsUpperBound +1
 
 	}
 
-	nps:=(promoters-detractorov)/3*100
+	if score2>=9 {
+		promotersLowerBound= promotersLowerBound +1
+	}
+
+	if score2<=6 {
+		defactorsUpperBound = defactorsUpperBound +1
+
+	}
+
+	if score3>=9 {
+		promotersLowerBound= promotersLowerBound +1
+	}
+
+	if score3<=6 {
+		defactorsUpperBound = defactorsUpperBound +1
+
+	}
+
+
+	nps:=(promotersLowerBound - defactorsUpperBound)/3*100
 	//2/3*100->0*100-> 0             2*100/3->200/3->66
 	fmt.Println(nps)
 	//ctrl+alt+shift+leviy klik mishi(mnogo kursorov)
